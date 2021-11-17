@@ -1,0 +1,269 @@
+.Product-card {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px;
+
+    position: static;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: #FFFFFF;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0 0;
+    transition: filter 0.4s;
+}
+
+.Product-card:hover {
+    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
+    z-index: 99;
+}
+.Product-card:hover .Green-icon{
+    opacity: 1;
+}
+
+.Content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+
+    position: static;
+    width: 354px;
+    height: 58px;
+    left: 16px;
+    top: 370px;
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0 0;
+}
+
+.Title-prod-brand {
+    position: relative;
+    height: 29px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+
+    font-size: 18px;
+    line-height: 160%;
+
+    display: flex;
+    align-items: center;
+
+    color: #1D1F22;
+}
+
+.Title-prod {
+    position: relative;
+    height: 29px;
+
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 160%;
+
+
+    display: flex;
+    align-items: center;
+
+    color: #1D1F22;
+
+
+
+}
+
+
+.Price-in-bag{
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    width: 58px;
+    height: 29px;
+
+    font-size: 10px;
+}
+
+.Price-of-chosen-thing-block-bag {
+
+    align-items: center;
+
+    position: absolute;
+    width: 52px;
+    height: 26px;
+
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.Price{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    position: relative;
+    width: 58px;
+    height: 29px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0 0;
+}
+
+.Spacer-prod {
+    position: static;
+    width: 24px;
+    height: 24px;
+    left: 181px;
+    top: 346px;
+
+    opacity: 0;
+
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0 0;
+}
+
+.Clothes-pic {
+
+
+    position: static;
+    width: 354px;
+    height: 330px;
+    left: 16px;
+    top: 16px;
+
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0 0;
+    text-align: center;
+}
+
+.Pic-size {
+    height: auto;
+    width: auto;
+    max-height: 330px;
+    max-width: 354px;
+}
+
+.Up-product-container {
+    position: relative;
+    align-items: center;
+    width: 1440px;
+
+    height: auto;
+
+}
+
+
+
+.Product-container {
+    position: relative;
+    width: 1200px;
+
+
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0 112px 100px;
+
+
+
+}
+
+.Product-item {
+    position: relative;
+    width: 386px;
+    height: 444px;
+    margin: 10% 5% 20%;
+}
+
+.Out-of-stock-active {
+    position: absolute;
+    display: flex;
+    padding: 0;
+
+    width: 386px;
+    height: 444px;
+
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.50);
+    opacity: 1;
+    margin: 10% 5%;
+
+    align-items: center;
+    z-index: 100;
+}
+
+.Out-of-stock {
+    position: absolute;
+    display: flex;
+    padding: 0;
+    margin: 20% 5%;
+
+    width: 386px;
+    height: 444px;
+
+    text-align: center;
+    align-items: center;
+    z-index: 100;
+
+
+}
+
+.Out-of-stock-text {
+    width: 386px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+.Product-block {
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    position: absolute;
+    width: 386px;
+    height: 444px;
+    margin: 10% 5% 20%;
+}
+
+
+
+

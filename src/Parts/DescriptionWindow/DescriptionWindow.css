@@ -1,0 +1,312 @@
+.Back-of-description-window {
+
+    position: absolute;
+    top: 88px;
+    min-height: 800px;
+    height: auto;
+    width: 1440px;
+    z-index: 101;
+}
+
+.Description-window {
+    position: absolute;
+    display: flex;
+    width: 1440px;
+    min-height: 800px;
+    height: auto;
+
+    left: 0px;
+    top: 80px;
+
+    background: #FFFFFF;
+}
+
+.Descr-back-place {
+    position: absolute;
+    width: 90px;
+    height: 50px;
+
+    right: 10px;
+    top: -30px;
+    z-index: 103;
+}
+
+.Description-pic {
+    left: 100px;
+    height: 80px;
+    width: 80px;
+    margin-top: 30px;
+
+}
+
+.Pic-block-row {
+    position: absolute;
+    left: 97px;
+    top: 73px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.Pic-size-description {
+    width: auto;
+    height: auto;
+    max-height: 80px;
+    max-width: 80px;
+
+}
+
+.Main-pic {
+    position: absolute;
+    top: 63px;
+    left: 220px;
+    width: 610px;
+    height: 510px;
+    align-items: center;
+}
+
+.Main-pic-size {
+    width: auto;
+    height: auto;
+    max-height: 510px;
+    max-width: 610px;
+}
+
+.Description-block {
+    position: absolute;
+
+    width: 310px;
+    min-height: 510px;
+    height: auto;
+    left: 920px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Description-item-name {
+    position: absolute;
+    width: 292px;
+    height: 27px;
+    /*left: 929px;*/
+    top: 100px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+    /* identical to box height, or 90% */
+    text-align: center;
+    /*align-items: center;*/
+
+    color: #1D1F22;
+}
+
+.Attributes-container {
+    position: absolute;
+    width: 310px;
+    height: auto;
+    top: 140px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.Each-attribute-container {
+    margin: 0px;
+}
+
+.Attributes {
+
+    width: 310px;
+    height: 18px;
+
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1D1F22;
+}
+
+.Attribute-items {
+    height: 50px;
+    min-width: 310px;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.Attribute-item-button-descr {
+    position: relative;
+
+    margin: 5px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+
+    height: 30px;
+    width: 50px;
+    border: 1px solid #1D1F22;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    transition: filter 0.4s;
+
+}
+
+.Attribute-item-button-active {
+    background-color: #1D1F22;
+    color: #FFFFFF;
+}
+
+.Attribute-item-button-color-active {
+    border: 3px solid #1D1F22;
+}
+
+.Attribute-item-button-descr:hover {
+    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
+
+}
+
+.Attribute-item-button-text {
+    position: relative;
+    height: 45px;
+    font-size: 16px;
+    top: 3px
+}
+
+.Price-text {
+    position: relative;
+    width: 310px;
+    height: 18px;
+    top: 340px;
+    left: 10px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    /* identical to box height, or 100% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1D1F22;
+}
+
+.Description-cost {
+    position: absolute;
+    width: 310px;
+    height: 18px;
+    top: 375px;
+    left: 10px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 18px;
+    /* identical to box height, or 100% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1D1F22;
+}
+
+.Description-text-container {
+    position: absolute;
+
+    overflow-y: scroll;
+    background-color: #ffffff;
+    width: 325px;
+    min-height: 140px;
+    left: 7px;
+    top: 470px;
+
+    border: 1px solid #1D1F22;
+    box-sizing: border-box;
+}
+
+.Description-text-container::-webkit-scrollbar {
+    position: absolute;
+    background-color: #FFFFFF;
+
+}
+
+.Description-text {
+    position: absolute;
+    height: auto;
+    width: 310px;
+    font-family: Raleway;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 160%;
+    text-align: center;
+
+}
+
+.Add-to-cart-button-block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 325px;
+    height: 52px;
+    left: 5px;
+    top: 400px;
+
+    background: #5ECE7B;
+
+
+}
+
+.Add-to-cart-button {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    left: calc(50% - 120px/2);
+    top: calc(50% - 20px/2);
+
+    /* --button-font */
+
+    /* identical to box height, or 19px */
+
+    align-items: center;
+    text-align: center;
+
+    display: flex;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
