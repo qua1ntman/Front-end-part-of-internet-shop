@@ -17,7 +17,7 @@ class DescriptionWindow extends React.Component {
         }
     }
 
-    chosenItemDetailsContainer (attributes) {
+    chosenItemDetailsContainer = (attributes) => {
         this.setState({
             chosenItemDetailsObj : {
                 id: this.props.product.name+','+attributes.map(item => item.value),
@@ -31,10 +31,6 @@ class DescriptionWindow extends React.Component {
         })
         setTimeout(() => {this.props.chosenItemsDetailsContainer(this.state.chosenItemDetailsObj);
         },100)
-    }
-
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
     }
 
     render() {
@@ -54,8 +50,8 @@ class DescriptionWindow extends React.Component {
                             currency={this.props.currency}
                             currencyName={this.props.currencyName}
                             pic={this.props.product.gallery[0]}
-                            chosenItemDetailsContainer={this.chosenItemDetailsContainer.bind(this)}
-                            handleWindowChange={this.handleWindowChange}
+                            chosenItemDetailsContainer={this.chosenItemDetailsContainer}
+                            handleWindowChange={this.props.handleWindowChange}
                         />
 
 

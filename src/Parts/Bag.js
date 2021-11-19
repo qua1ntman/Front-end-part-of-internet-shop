@@ -8,35 +8,9 @@ import {CheckOutItem, ViewBagItem} from "./BagParts/Buttons";
 
 class Bag extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            totalPrice: []
-        }
-    }
-
-    totalPriceChange (thingTotalPrice) {
-        this.setState(prevState  => ({
-            totalPrice: [...prevState.totalPrice, thingTotalPrice]
-        }))
-    }
-
-    totalBagPriceFunc = (item) => {
-        this.props.totalBagPriceFunc(item)
-    }
-
-    totalBagCountFunc = (item) => {
-        this.props.totalBagCountFunc(item)
-    }
-
     handleWindowChange = (active) => {
         this.props.handleWindowChange(active)
         this.props.handleOpenBag()
-    }
-
-    changeCounter = (id, counter) => {
-        this.props.changeCounter (id, counter)
-        console.log(id, counter)
     }
 
     chosenRemoveItemsFunc = (id) => {
@@ -46,7 +20,6 @@ class Bag extends React.Component {
         } else {
             this.props.chosenRemoveItemsFunc(id)
         }
-        console.log(id)
     }
 
 
@@ -61,10 +34,10 @@ class Bag extends React.Component {
                         chosenItems={this.props.chosenItemsDetailsContainer}
                         currency={this.props.currency}
                         currencyName={this.props.currencyName}
-                        totalPriceChange={this.totalPriceChange.bind(this)}
-                        totalBagPriceFunc={this.totalBagPriceFunc}
-                        totalBagCountFunc={this.totalBagCountFunc}
-                        changeCounter={this.changeCounter}
+                        // totalPriceChange={this.totalPriceChange.bind(this)}
+                        totalBagPriceFunc={this.props.totalBagPriceFunc}
+                        totalBagCountFunc={this.props.totalBagCountFunc}
+                        changeCounter={this.props.changeCounter}
                         chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
                     />
                     <TotalPrice

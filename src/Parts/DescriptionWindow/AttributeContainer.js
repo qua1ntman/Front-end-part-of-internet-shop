@@ -15,13 +15,13 @@ class AttributeContainer extends React.Component {
         }
     }
 
-    SelectAttribute (value) {
+    SelectAttribute = (value) => {
         this.setState({
             attributeSelected: value
             })
     }
 
-    SelectAttributeInBag (name, value) {
+    SelectAttributeInBag = (name, value) => {
         this.props.attributesToCreateBagComp(name, value)
         this.setState({
             chosenAttribute: [
@@ -29,7 +29,6 @@ class AttributeContainer extends React.Component {
                     {value: value},
             ]
         })
-        setTimeout(() => console.log(this.state.chosenAttribute), 0)
     }
 
 
@@ -42,9 +41,9 @@ class AttributeContainer extends React.Component {
                         <Attributes
                             name={this.props.name}
                             value={value}
-                            SelectAttribute={this.SelectAttribute.bind(this)}
+                            SelectAttribute={this.SelectAttribute}
                             attributeSelected={this.state.attributeSelected}
-                            SelectAttributeInBag={this.SelectAttributeInBag.bind(this)}
+                            SelectAttributeInBag={this.SelectAttributeInBag}
                             chosenAttributes={this.state.chosenAttributes}
                         />
                     ))

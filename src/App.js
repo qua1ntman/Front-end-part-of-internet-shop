@@ -38,23 +38,17 @@ class App extends React.Component {
     }
 
 
-    handleDescriptionData(product){
-        console.log(product)
-    }
-
-    handleThingData3(product) {
+    handleThingData = (product) => {
         this.setState({
             productObj: product
-
         })
-        this.handleDescriptionData(product)
-
     }
 
-    chosenItemsDetailsContainerFunc (chosenItemDetailsObj) {
-
+    chosenItemsDetailsContainerFunc = (elem) => {
         this.setState(prevState  => ({
-            chosenItemsDetailsContainer: [...prevState.chosenItemsDetailsContainer, chosenItemDetailsObj]
+            chosenItemsDetailsContainer:  this.state.chosenItemsDetailsContainer.filter(item => item.id === elem.id).length > 0
+            ? this.state.chosenItemsDetailsContainer.map(item => item.id === elem.id ? {...item, counter: item.counter+1} : item)
+            : [...prevState.chosenItemsDetailsContainer, elem]
         }))
     }
 
@@ -63,27 +57,23 @@ class App extends React.Component {
             chosenItemsDetailsContainer: this.state.chosenItemsDetailsContainer
                 .filter(item => item.id !== id)
         })
-        console.log(id)
-        setTimeout(() => console.log( this.state.chosenItemsDetailsContainer),300)
 
     }
 
-    totalBagCountFunc = (newElem) => {
+    totalBagCountFunc = (elem) => {
         this.setState(prevState => ({
-            totalBagCount: this.state.totalBagCount.filter(item => item.id === newElem.id).length > 0
-                ? this.state.totalBagCount.map(item => item.id === newElem.id ? newElem : item)
-                : [...prevState.totalBagCount, newElem]
+            totalBagCount: this.state.totalBagCount.filter(item => item.id === elem.id).length > 0
+                ? this.state.totalBagCount.map(item => item.id === elem.id ? elem : item)
+                : [...prevState.totalBagCount, elem]
         }))
-        setTimeout(() => console.log(this.state.totalBagCount), 100)
     }
 
-    totalBagPriceFunc (elem) {
+    totalBagPriceFunc = (elem) => {
 
         this.setState(prevState => ({
             totalBagPrice: this.state.totalBagPrice.filter(item => item.id === elem.id).length > 0
                 ? this.state.totalBagPrice.map( item => item.id === elem.id ? elem : item)
                 : [...prevState.totalBagPrice, elem]}))
-        setTimeout(() => console.log(this.state.totalBagPrice),100)
 
     }
 
@@ -94,7 +84,6 @@ class App extends React.Component {
     }
 
     changeCounter = (elem) => {
-        console.log(this.state.chosenItemsDetailsContainer)
         this.setState({
             chosenItemsDetailsContainer:
                 this.state.chosenItemsDetailsContainer
@@ -104,7 +93,6 @@ class App extends React.Component {
                     : item)
                 : this.state.chosenItemsDetailsContainer
         })
-        setTimeout(() => console.log(elem.id),0)
 
     }
 
@@ -114,16 +102,15 @@ class App extends React.Component {
             <div className="Base">
                 <div className="App">
                     <Head
-                        key='Head'
                         currency={this.state.currency}
                         currencyName={this.state.currencyName}
                         category={this.state.category}
-                        handleCurrencyChange={this.handleCurrencyChange.bind(this)}
+                        handleCurrencyChange={this.handleCurrencyChange}
                         techPageActive={this.state.techPageActive}
                         clothesPageActive={this.state.clothesPageActive}
                         chosenItemsDetailsContainer={this.state.chosenItemsDetailsContainer}
                         totalBagPrice={this.state.totalBagPrice}
-                        totalBagPriceFunc={this.totalBagPriceFunc.bind(this)}
+                        totalBagPriceFunc={this.totalBagPriceFunc}
                         categoryActive={this.state.categoryActive}
                         handleChangeCategory={this.handleChangeCategory}
                         handleWindowChange={this.handleWindowChange}
@@ -134,23 +121,20 @@ class App extends React.Component {
 
                     />
                     <ProductListContainer
-                        key='ProductList'
                         currency={this.state.currency}
                         currencyName={this.state.currencyName}
                         techPageActive={this.state.techPageActive}
                         clothesPageActive={this.state.clothesPageActive}
                         categoryActive={this.state.categoryActive}
-                        handleThingData3={this.handleThingData3.bind(this)}
+                        handleThingData={this.handleThingData}
                         handleWindowChange={this.handleWindowChange}
                         whatListActive={this.state.whatListActive}
                     />
                     <DescriptionWindow
-                        key='DescriptionWindow'
                         product={this.state.productObj}
-                        handleDescriptionData={this.handleDescriptionData.bind(this)}
                         currency={this.state.currency}
                         currencyName={this.state.currencyName}
-                        chosenItemsDetailsContainer={this.chosenItemsDetailsContainerFunc.bind(this)}
+                        chosenItemsDetailsContainer={this.chosenItemsDetailsContainerFunc}
                         handleWindowChange={this.handleWindowChange}
                         whatListActive={this.state.whatListActive}
                     />
@@ -158,7 +142,7 @@ class App extends React.Component {
                         handleWindowChange={this.handleWindowChange}
                         whatListActive={this.state.whatListActive}
                         chosenItemsDetailsContainer={this.state.chosenItemsDetailsContainer}
-                        totalBagPriceFunc={this.totalBagPriceFunc.bind(this)}
+                        totalBagPriceFunc={this.totalBagPriceFunc}
                         totalBagCountFunc={this.totalBagCountFunc}
                         totalBagPrice={this.state.totalBagPrice}
                         changeCounter={this.changeCounter}

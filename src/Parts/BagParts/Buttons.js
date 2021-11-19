@@ -21,7 +21,7 @@ class PlusUnitButton extends React.Component {
 
 class MinusUnitButton extends React.Component {
 
-    changeCounterMinus = ({counterChange=this.props.counter-1}) => {
+    changeCounterMinus = ({counterChange=this.props.counter===1 ? 1 : this.props.counter-1}) => {
         this.props.changeCounter(counterChange)
         setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
     }
@@ -37,14 +37,12 @@ class MinusUnitButton extends React.Component {
 
 class ViewBagItem extends React.Component {
 
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-    }
+
 
     render() {
         return (
             <div className='Bag-buttons View-bag-item-button'
-                 onClick={() => this.handleWindowChange('cart')}
+                 onClick={() => this.props.handleWindowChange('cart')}
             >
                 <div className='Buttons-bag-text'>VIEW BAG</div>
             </div>
@@ -65,16 +63,10 @@ class CheckOutItem extends React.Component {
 
 class DeleteItemButton extends React.Component {
 
-    chosenRemoveItemsFunc = ({id=this.props.id}) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(id)
-
-    }
-
     render() {
         return (
             <div className='Delete-button'
-                 onClick={this.chosenRemoveItemsFunc}
+                 onClick={() => this.props.chosenRemoveItemsFunc(this.props.id)}
             >x</div>
         )
     }
@@ -83,14 +75,10 @@ class DeleteItemButton extends React.Component {
 
 class BackButton extends React.Component {
 
-    handleWindowChange = ({active='products'}) => {
-        this.props.handleWindowChange(active)
-    }
-
     render() {
         return (
             <div className='Back-to-products-block'
-                 onClick={this.handleWindowChange}
+                 onClick={() => this.props.handleWindowChange('products')}
             >
                 <div className='Back-to-products'>
                     <div className='Back-to-products-text'>{'<'}- Back </div>

@@ -35,32 +35,6 @@ class Actions extends React.Component{
         })
     }
 
-    handleCurrencyChangeAction = (currencyProp, currencyNameProp) => {
-        this.props.handleCurrencyChangeHead (currencyProp, currencyNameProp)
-        console.log('Action ,'+currencyProp+', '+currencyNameProp)
-
-    }
-    totalBagPriceFunc = (someinfo) => {
-        this.props.totalBagPriceFunc(someinfo)
-    }
-
-    totalBagCountFunc = (item) => {
-        this.props.totalBagCountFunc(item)
-    }
-
-
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-    }
-
-    changeCounter = (id, counter) => {
-        this.props.changeCounter (id, counter)
-    }
-
-    chosenRemoveItemsFunc = (id) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(id)
-    }
 
 
 
@@ -75,21 +49,21 @@ class Actions extends React.Component{
                      currency={this.props.currency}
                      currencyName={this.props.currencyName}
                      totalBagPrice={this.props.totalBagPrice}
-                     totalBagPriceFunc={this.totalBagPriceFunc}
-                     totalBagCountFunc={this.totalBagCountFunc}
+                     totalBagPriceFunc={this.props.totalBagPriceFunc}
+                     totalBagCountFunc={this.props.totalBagCountFunc}
                      totalBagCount={this.state.totalBagCount}
-                     handleWindowChange={this.handleWindowChange}
+                     handleWindowChange={this.props.handleWindowChange}
                      handleOpenBag={this.handleOpenBag}
-                     changeCounter={this.changeCounter}
-                     chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
+                     changeCounter={this.props.changeCounter}
+                     chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
                 />
                 <Converter
                     key='Converter'
-                    handleConverterNotActive={this.handleConverterNotActive.bind(this)}
+                    handleConverterNotActive={this.handleConverterNotActive}
                     active={this.state.converterActive}
                     currencyName={this.props.currencyName}
                     currency={this.props.currency}
-                    handleCurrencyChangeAction={this.handleCurrencyChangeAction.bind(this)}
+                    handleCurrencyChange={this.props.handleCurrencyChange}
                 />
                 <div className="Actions">
                     <div className='Spacer-xl'/>

@@ -1,6 +1,5 @@
 import React from "react";
 import {ProductCost} from "../ProductParts/ProductParts";
-import Attributes from "./Attributes";
 import AttributeContainer from "./AttributeContainer";
 
 
@@ -13,21 +12,14 @@ class DescriptionBlock extends React.Component {
         }
     }
 
-    handleChangeListAndDescriptionInDisc1({chosenAttributes=this.state.chosenAttributes, active='products'}) {
-        // this.props.handleChangeListAndDescriptionInDisc2()
+    handleChangeListAndDescriptionInDisc = ({chosenAttributes=this.state.chosenAttributes, active='products'}) => {
         this.props.chosenItemDetailsContainer(chosenAttributes
             .sort((a, b) => a.name > b.name ? 1:-1)
         )
         this.props.handleWindowChange(active)
-        console.log(active)
     }
 
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-        console.log(active)
-    }
-
-    attributesToCreateBagComp(attrName, attrValue) {
+    attributesToCreateBagComp = (attrName, attrValue) => {
 
         this.setState(prevState => ({
             chosenAttributes: this.state.chosenAttributes.filter(item => item.name === attrName).length > 0
@@ -43,19 +35,6 @@ class DescriptionBlock extends React.Component {
         }))
     }
 
-
-    filterChosenAttributes (item, attrName) {
-
-        let filtered = Object
-            .entries(item)
-            .filter(([name, value]) => value === attrName);
-
-        return filtered.length
-    }
-
-
-
-
     render () {
         return (
 
@@ -66,7 +45,7 @@ class DescriptionBlock extends React.Component {
                     <AttributeContainer
                         name={name}
                         items={items}
-                        attributesToCreateBagComp={this.attributesToCreateBagComp.bind(this)}
+                        attributesToCreateBagComp={this.attributesToCreateBagComp}
 
                     />
                 )) || <div></div>} </div>
@@ -79,7 +58,7 @@ class DescriptionBlock extends React.Component {
                     />
                 </div>
                 <div className='Add-to-cart-button-block'
-                     onClick={this.handleChangeListAndDescriptionInDisc1.bind(this)}
+                     onClick={this.handleChangeListAndDescriptionInDisc}
                 >
                     <div className='Add-to-cart-button'>ADD TO CART</div>
                 </div>

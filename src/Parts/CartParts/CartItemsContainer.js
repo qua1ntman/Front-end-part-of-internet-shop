@@ -9,26 +9,10 @@ class CartItemsContainer extends React.Component {
         super(props);
         this.state = {
             thisItemPriceChange: {},
-            // {/*handleItemCosts: []*/}
         }
     }
 
-    totalBagPriceFunc = (item) => {
-        this.props.totalBagPriceFunc(item)
-    }
 
-    totalBagCountFunc = (item) => {
-        this.props.totalBagCountFunc(item)
-    }
-
-    changeCounter = (id, counter) => {
-        this.props.changeCounter (id, counter)
-        console.log(id, counter)
-    }
-    chosenRemoveItemsFunc = (id) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(id)
-    }
 
     render() {
         if (this.props.chosenItems.length > 0) {
@@ -43,13 +27,13 @@ class CartItemsContainer extends React.Component {
                                 pics={item.pics}
                                 attributes={item.attributes}
                                 prices={item.prices}
-                                currency2={this.props.currency}
-                                currencyName2={this.props.currencyName}
-                                totalBagPriceFunc={this.totalBagPriceFunc}
-                                totalBagCountFunc={this.totalBagCountFunc}
+                                currency={this.props.currency}
+                                currencyName={this.props.currencyName}
+                                totalBagPriceFunc={this.props.totalBagPriceFunc}
+                                totalBagCountFunc={this.props.totalBagCountFunc}
                                 totalBagPrice={this.props.totalBagPrice}
-                                changeCounter={this.changeCounter}
-                                chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
+                                changeCounter={this.props.changeCounter}
+                                chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
 
                             />
                         }

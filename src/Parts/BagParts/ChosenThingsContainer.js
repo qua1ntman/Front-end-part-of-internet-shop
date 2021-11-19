@@ -5,23 +5,22 @@ import ChosenThings from "./ChosenThing";
 class ChosenThingsContainer extends React.Component {
 
 
-    totalBagPriceFunc = (item) => {
-        this.props.totalBagPriceFunc(item)
-    }
+    // totalBagPriceFunc = (item) => {
+    //     this.props.totalBagPriceFunc(item)
+    // }
+    //
+    // totalBagCountFunc = (item) => {
+    //     this.props.totalBagCountFunc(item)
+    // }
 
-    totalBagCountFunc = (item) => {
-        this.props.totalBagCountFunc(item)
-    }
+    // changeCounter = (id, counter) => {
+    //     this.props.changeCounter (id, counter)
+    // }
 
-    changeCounter = (id, counter) => {
-        this.props.changeCounter (id, counter)
-    }
-
-    chosenRemoveItemsFunc = (id) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(123123)
-
-    }
+    // chosenRemoveItemsFunc = (id) => {
+    //     this.props.chosenRemoveItemsFunc(id)
+    //
+    // }
 
     render() {
         return (
@@ -37,10 +36,10 @@ class ChosenThingsContainer extends React.Component {
                                     prices={item.prices}
                                     currency2={this.props.currency}
                                     currencyName2={this.props.currencyName}
-                                    totalBagPriceFunc={this.totalBagPriceFunc}
-                                    totalBagCountFunc={this.totalBagCountFunc}
-                                    changeCounter={this.changeCounter}
-                                    chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
+                                    totalBagPriceFunc={this.props.totalBagPriceFunc}
+                                    totalBagCountFunc={this.props.totalBagCountFunc}
+                                    changeCounter={this.props.changeCounter}
+                                    chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
                                     chosenItems={this.props.chosenItems}
                                 />
                             }

@@ -19,8 +19,6 @@ class TotalPriceCounter extends React.Component {
 
             sumArr.forEach(el => sum += Number(el))
 
-            setTimeout(() => console.log(sum), 100)
-
             return (
                 <PriceDiv
                     currency={this.props.currencyProd}

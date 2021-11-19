@@ -91,8 +91,8 @@ class ItemPriceCart extends React.Component {
         return (
             <div className='Cost-in-bag-block-cart'>
                 <ItemCostInCart
-                    currencyProd={this.props.currency1}
-                    currencyName={this.props.currencyName1}
+                    currencyProd={this.props.currency}
+                    currencyName={this.props.currencyName}
                     prices={this.props.prices}
                     counter={this.props.counter}
                 />

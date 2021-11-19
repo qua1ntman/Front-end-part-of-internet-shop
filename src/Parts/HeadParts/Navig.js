@@ -14,13 +14,6 @@ class Navig extends React.Component {
         }
     }
 
-    handleChangeCategory = (item) => {
-        this.props.handleChangeCategory(item)
-    }
-
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-    }
 
     render() {
         return (
@@ -29,8 +22,8 @@ class Navig extends React.Component {
                     techPageActive={this.props.techPageActive}
                     categoryButton={this.state.categoryButton}
                     categoryActive={this.props.categoryActive}
-                    handleChangeCategory={this.handleChangeCategory}
-                    handleWindowChange={this.handleWindowChange}
+                    handleChangeCategory={this.props.handleChangeCategory}
+                    handleWindowChange={this.props.handleWindowChange}
                 />
 
             </div>

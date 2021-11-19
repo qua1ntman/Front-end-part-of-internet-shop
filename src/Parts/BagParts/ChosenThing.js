@@ -8,8 +8,7 @@ class ChosenThings extends React.Component {
 
 
     changeCounter = (counter) => {
-            this.props.changeCounter (this.props.id, counter)
-        console.log(this.props.id, counter)
+        this.props.changeCounter (this.props.id, counter)
     }
 
     totalBagPriceFunc = () => {
@@ -25,12 +24,6 @@ class ChosenThings extends React.Component {
             id: this.props.id,
             counter: this.props.counter
         })
-    }
-
-    chosenRemoveItemsFunc = (id) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(123123)
-
     }
 
     render() {
@@ -79,7 +72,7 @@ class ChosenThings extends React.Component {
                 <DeleteItemButton
                     chosenItems={this.props.chosenItems}
                     id={this.props.id}
-                    chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
+                    chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
                 />
 
 

@@ -9,8 +9,7 @@ class Converter extends React.Component{
 
     clickerFunc = (currencyProp, currencyNameProp) => {
         this.props.handleConverterNotActive(false)
-        this.props.handleCurrencyChangeAction(currencyProp, currencyNameProp)
-        console.log('Converter ,'+currencyProp+', '+currencyNameProp)
+        this.props.handleCurrencyChange(currencyProp, currencyNameProp)
     }
 
     render() {

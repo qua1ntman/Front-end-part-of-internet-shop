@@ -24,13 +24,8 @@ class ChosenThingsInCart extends React.Component {
 
     changeCounter = (counter) => {
         this.props.changeCounter (this.props.id, counter)
-        console.log(this.props.id, counter)
     }
 
-    chosenRemoveItemsFunc = (id) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(id)
-    }
 
     render() {
 
@@ -39,8 +34,8 @@ class ChosenThingsInCart extends React.Component {
                 <ItemTitle name={this.props.name}
                            brand={this.props.brand}/>
                 <ItemPriceCart
-                    currency1={this.props.currency2}
-                    currencyName1={this.props.currencyName2}
+                    currency={this.props.currency}
+                    currencyName={this.props.currencyName}
                     prices={this.props.prices}
                     counter={this.props.counter}
                     changeCounter={this.changeCounter}
@@ -75,7 +70,7 @@ class ChosenThingsInCart extends React.Component {
                 />
 
                 <DeleteItemButtonInCart
-                    chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
+                    chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
                     id={this.props.id}
                 />
 

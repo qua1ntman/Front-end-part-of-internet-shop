@@ -7,11 +7,6 @@ import circleIcon from '../../items/Circle Icon.png'
 
 class Product extends React.Component {
 
-    descriptionWindow({product = this.props.productQuery,}) {
-        this.props.handleThingData(product)
-    }
-
-
     render() {
         return (
             <div className='Product-item'>
@@ -19,7 +14,7 @@ class Product extends React.Component {
                 <div className='Product-block'
                      onClick={() => this.props.handleWindowChange('description')
                      }>
-                    <div className="Product-card" onClick={this.descriptionWindow.bind(this)}>
+                    <div className="Product-card" onClick={() => this.props.handleThingData(this.props.productQuery)}>
                         <div className='Content'>
 
                             <ProductName name={this.props.name}

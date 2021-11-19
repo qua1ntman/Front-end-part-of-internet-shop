@@ -11,16 +11,6 @@ import {
 
 class ProductListContainer extends React.Component {
 
-    handleThingData2(product){
-        this.props.handleThingData3(product)
-        console.log(product)
-
-    }
-
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-    }
-
     render() {
         if (this.props.whatListActive === 'products' ) {
             return (
@@ -39,10 +29,9 @@ class ProductListContainer extends React.Component {
                                         <ProductList
                                             currency={this.props.currency}
                                             currencyName={this.props.currencyName}
-                                            // handleChangeChosenThing={this.handleChangeChosenThing1.bind(this)}
-                                            handleThingData={this.handleThingData2.bind(this)}
+                                            handleThingData={this.props.handleThingData}
                                             products={products}
-                                            handleWindowChange={this.handleWindowChange}
+                                            handleWindowChange={this.props.handleWindowChange}
                                         />
                                     </div>
                                 </div>
@@ -60,21 +49,6 @@ class ProductListContainer extends React.Component {
 
 class ProductList extends React.Component {
 
-
-    // handleChangeChosenThing(chosenProduct){
-    //     this.props.handleChangeChosenThing(chosenProduct)
-    // }
-
-    handleThingData(product){
-        this.props.handleThingData(product)
-        console.log(product)
-
-    }
-
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-    }
-
     render() {
         return (
 
@@ -90,11 +64,10 @@ class ProductList extends React.Component {
                                      prices={data.product.prices}
                                      currency={this.props.currency}
                                      currencyName={this.props.currencyName}
-                                     // handleChangeChosenThing2={this.handleChangeChosenThing.bind(this)}
-                                     handleThingData={this.handleThingData.bind(this)}
+                                     handleThingData={this.props.handleThingData}
                                      productQuery={data.product}
                                      brand={data.product.brand}
-                                     handleWindowChange={this.handleWindowChange}
+                                     handleWindowChange={this.props.handleWindowChange}
                             />
                         )
                     }}

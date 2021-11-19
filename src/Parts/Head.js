@@ -7,38 +7,8 @@ import Logo from "./HeadParts/Logo";
 
 class Head extends React.Component  {
 
-    handleCurrencyChangeHead = (currencyProp, currencyNameProp) => {
-        this.props.handleCurrencyChange (currencyProp, currencyNameProp)
-        console.log('Head ,'+currencyProp+', '+currencyNameProp)
-
-    }
-
-
-    handleChangeCategory = (item) => {
-        this.props.handleChangeCategory(item)
-    }
-
-    totalBagPriceFunc(chosenCategory){
-        this.props.totalBagPriceFunc(chosenCategory)
-    }
-
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-    }
-
-    totalBagCountFunc = (item) => {
-        this.props.totalBagCountFunc(item)
-    }
-
     changeCounter = (id, counter) => {
         this.props.changeCounter ({id: id, counter: counter})
-        console.log({id: id, counter: counter})
-
-    }
-
-    chosenRemoveItemsFunc = (id) => {
-        this.props.chosenRemoveItemsFunc(id)
-        console.log(id)
     }
 
     render() {
@@ -49,22 +19,22 @@ class Head extends React.Component  {
                     techPageActive={this.props.techPageActive}
                     clothesPageActive={this.props.clothesPageActive}
                     categoryActive={this.props.categoryActive}
-                    handleChangeCategory={this.handleChangeCategory}
-                    handleWindowChange={this.handleWindowChange}
+                    handleChangeCategory={this.props.handleChangeCategory}
+                    handleWindowChange={this.props.handleWindowChange}
                 />
                 <Logo/>
                 <Actions
                     key='Actions'
                     currency={this.props.currency}
                     currencyName={this.props.currencyName}
-                    handleCurrencyChangeHead={this.handleCurrencyChangeHead.bind(this)}
+                    handleCurrencyChange={this.props.handleCurrencyChange}
                     chosenItemsDetailsContainer={this.props.chosenItemsDetailsContainer}
                     totalBagPrice={this.props.totalBagPrice}
-                    totalBagPriceFunc={this.totalBagPriceFunc.bind(this)}
-                    handleWindowChange={this.handleWindowChange}
-                    totalBagCountFunc={this.totalBagCountFunc}
+                    totalBagPriceFunc={this.props.totalBagPriceFunc}
+                    totalBagCountFunc={this.props.totalBagCountFunc}
+                    handleWindowChange={this.props.handleWindowChange}
                     changeCounter={this.changeCounter}
-                    chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
+                    chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
                 />
             </div>
         )

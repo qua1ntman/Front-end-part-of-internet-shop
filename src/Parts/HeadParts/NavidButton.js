@@ -3,14 +3,10 @@ import './Head.css';
 
 class NavigButton extends React.Component {
 
-    handleChangeCategory(item){
-        this.props.handleChangeCategory(item)
-    }
-
     render() {
         return this.props.categoryButton.map(item =>
              <div className="Category-block"
-                 onClick={() => this.handleChangeCategory(item)
+                 onClick={() => this.props.handleChangeCategory(item)
                  && this.props.handleWindowChange('products')}
             >
                 <div className='Each-navig-container'>

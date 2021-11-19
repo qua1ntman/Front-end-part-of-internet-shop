@@ -27,7 +27,6 @@ class MinusUnitButton extends React.Component {
     changeCounterMinus = ({counterChange=this.props.counter-1}) => {
         this.props.changeCounter(counterChange)
         setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
-        console.log(counterChange)
     }
 
     render() {
@@ -63,7 +62,6 @@ class DeleteItemButtonInCart extends React.Component {
 
     chosenRemoveItemsFunc = ({id=this.props.id}) => {
         this.props.chosenRemoveItemsFunc(id)
-        console.log(id)
     }
 
     render() {

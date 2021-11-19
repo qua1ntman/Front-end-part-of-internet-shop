@@ -14,7 +14,6 @@ class Attributes extends React.Component {
 
 
     render() {
-        console.log(this.props.name)
         if (this.props.name === 'Color') return (
 
             <div id={this.props.value}
