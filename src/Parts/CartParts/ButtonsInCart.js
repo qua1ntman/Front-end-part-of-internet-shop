@@ -50,7 +50,7 @@ class BtnSlider extends React.Component {
                     onClick={this.props.moveSlide}
                     className={this.props.direction === "next" ? "btn-slide right" : "btn-slide left"}
                 >
-                    <img src={this.props.direction === "next" ? right : left} width='6px' height='12px'/>
+                    <img alt='direction' src={this.props.direction === "next" ? right : left} className='slider-btn-img' />
                 </div>
             )
         }

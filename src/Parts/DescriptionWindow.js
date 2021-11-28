@@ -10,9 +10,7 @@ class DescriptionWindow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            chosenItemDetailsObj: {
-
-            },
+            chosenItemDetailsObj: {},
 
         }
     }
@@ -20,7 +18,7 @@ class DescriptionWindow extends React.Component {
     chosenItemDetailsContainer = (attributes) => {
         this.setState({
             chosenItemDetailsObj : {
-                id: this.props.product.name+','+attributes.map(item => item.value),
+                id: this.props.product.name+attributes.map(item => item.value),
                 counter: 1,
                 name: this.props.product.name,
                 brand: this.props.product.brand,
@@ -31,6 +29,7 @@ class DescriptionWindow extends React.Component {
         })
         setTimeout(() => {this.props.chosenItemsDetailsContainer(this.state.chosenItemDetailsObj);
         },100)
+        setTimeout(() => console.log(this.props.product.name+attributes.map(item => item.value)),100)
     }
 
     render() {
@@ -38,7 +37,7 @@ class DescriptionWindow extends React.Component {
                 <div className='Back-of-description-window'>
                     <div className='Descr-back-place'>
                         <BackButton
-                            handleWindowChange={this.handleWindowChange}
+                            handleWindowChange={this.props.handleWindowChange}
                         />
                     </div>
                     <div className='Description-window'>
@@ -64,4 +63,4 @@ class DescriptionWindow extends React.Component {
     }
 }
 
-export {DescriptionWindow}
+export default DescriptionWindow

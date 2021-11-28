@@ -7,7 +7,7 @@ class ChosenAttributeValue extends React.Component {
     render() {
         if (this.props.name === 'Color')
             return (<div id={this.props.value}
-                         className='Attribute-value-bag'
+                         className='Attribute-value-bag Color-block'
                          style={{backgroundColor: this.props.value}}>
                     </div>)
         return (

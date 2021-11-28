@@ -23,7 +23,7 @@ class ChosenThingsInCart extends React.Component {
     }
 
     changeCounter = (counter) => {
-        this.props.changeCounter (this.props.id, counter)
+        this.props.changeCounter ({id: this.props.id, counter: counter})
     }
 
 
@@ -34,10 +34,8 @@ class ChosenThingsInCart extends React.Component {
                 <ItemTitle name={this.props.name}
                            brand={this.props.brand}/>
                 <ItemPriceCart
-                    currency={this.props.currency}
                     currencyName={this.props.currencyName}
                     prices={this.props.prices}
-                    counter={this.props.counter}
                     changeCounter={this.changeCounter}
                 />
                 <div className='Attribute-container-cart'>

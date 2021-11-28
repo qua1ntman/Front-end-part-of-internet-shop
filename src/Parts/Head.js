@@ -24,8 +24,6 @@ class Head extends React.Component  {
                 />
                 <Logo/>
                 <Actions
-                    key='Actions'
-                    currency={this.props.currency}
                     currencyName={this.props.currencyName}
                     handleCurrencyChange={this.props.handleCurrencyChange}
                     chosenItemsDetailsContainer={this.props.chosenItemsDetailsContainer}
@@ -35,6 +33,10 @@ class Head extends React.Component  {
                     handleWindowChange={this.props.handleWindowChange}
                     changeCounter={this.changeCounter}
                     chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
+                    converterActive={this.props.converterActive}
+                    myBagActive={this.props.myBagActive}
+                    handleOpenBag={this.props.handleOpenBag}
+                    handleConverterActive={this.props.handleConverterActive}
                 />
             </div>
         )

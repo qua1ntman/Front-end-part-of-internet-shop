@@ -5,44 +5,27 @@ import PriceDiv from "./PriceDiv";
 class TotalPriceCounter extends React.Component {
 
     render() {
+        let sumArr=[0]
+        let sum = 0
 
+        this.props.chosenItems.map((item) => item.prices
+            .filter(({currency}) => currency === this.props.currencyName)
+            .map(({name, amount}) => sumArr.push(amount* item.counter)))
 
+        sumArr.forEach(el => sum += Number(el))
 
+        return (
 
-        if (this.props.currencyProd === '€') {
-            let sumArr=[0]
-            let sum = 0
+            <PriceDiv
+                cost={new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: this.props.currencyName,
 
-            this.props.chosenItems.map((item) => item.prices
-                .filter(({currency}) => currency === 'USD')
-                .map(({name, amount}) => sumArr.push(amount / 1.205736 * item.counter)))
-
-            sumArr.forEach(el => sum += Number(el))
-
-            return (
-                <PriceDiv
-                    currency={this.props.currencyProd}
-                    cost={sum.toFixed(2)}
-                />
-            )
-        }
-    
-    
-    else {
-            let sumArr=[0]
-            let sum = 0
-
-            this.props.chosenItems.map((item) => item.prices
-                .filter(({currency}) => currency === this.props.currencyName)
-                .map(({name, amount}) => sumArr.push(amount* item.counter)))
-
-            sumArr.forEach(el => sum += Number(el))
-
-        return <PriceDiv
-                    currency={this.props.currencyProd}
-                    cost={sum.toFixed(2)}
-               />
-        }
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }).format(sum)}
+            />
+        )
     }
 }
 

@@ -7,7 +7,7 @@ class ItemPhoto extends React.Component {
     render() {
         return (
             <div className='Pic-of-thing-bag'>
-                <img src={this.props.photo} className='Img-props-bag'/>
+                <img alt={this.props.photo} src={this.props.photo} className='Img-props-bag'/>
             </div>
         )
     }
@@ -32,8 +32,7 @@ class ItemPrice extends React.Component {
         return (
             <div className='Cost-in-bag-block-bag'>
                 <ItemCostInBag
-                    currencyProd={this.props.currency1}
-                    currencyName={this.props.currencyName1}
+                    currencyName={this.props.currencyName}
                     prices={this.props.prices}
                     counter={this.props.counter}
                 />

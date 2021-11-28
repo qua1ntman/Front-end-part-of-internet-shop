@@ -25,8 +25,27 @@
     filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
     z-index: 99;
 }
+
+
+
 .Product-card:hover .Green-icon{
     opacity: 1;
+}
+
+.Green-icon {
+    position: absolute;
+    opacity: 0;
+    height: 52px;
+    width: 52px;
+
+    bottom: 76px;
+    left: 300px;
+    transition: all 0.2s;
+    z-index: 104;
+}
+
+.Green-icon:hover {
+    filter: drop-shadow(0px 3px 5px rgba(168, 172, 176, 1));
 }
 
 .Content {
@@ -149,6 +168,130 @@
     margin: 0 0;
 }
 
+.Attribute-block-plp {
+    position: absolute;
+    width: 386px;
+    height: 350px;
+
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    top: 0
+}
+
+.Chose-attributes-text {
+    position: relative;
+    width: 386px;
+    height: 20px;
+
+    margin-top: 20px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+
+
+}
+
+.Attributes-container-plp {
+    position: relative;
+    width: 310px;
+    height: auto;
+    top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.Each-attribute-container-plp {
+    margin: 0px;
+}
+
+.Attributes-plp {
+
+    width: 310px;
+    height: 18px;
+
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1D1F22;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Attribute-items-plp {
+    height: 50px;
+    min-width: 310px;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.Attribute-item-button-plp {
+    position: relative;
+
+    margin-right: 10px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+
+    height: 30px;
+    width: 50px;
+    border: 1px solid #1D1F22;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s;
+    background-color: #FFFFFF;
+
+}
+
+.Attribute-item-button-plp:hover {
+    filter: drop-shadow(0px 4px 5px rgba(168, 172, 176, 1));
+}
+
+.Attribute-item-button-plp-active {
+    background-color: #1D1F22;
+    color: #FFFFFF;
+}
+
+.Attribute-item-button-color-plp-active {
+    border: 3px solid #1D1F22;
+}
+
+/*.Attribute-item-button-plp:hover {*/
+/*    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 1));*/
+
+/*}*/
+
+.Attribute-item-button-text-plp {
+    position: relative;
+    height: 45px;
+    font-size: 16px;
+    top: 3px
+}
+
 .Clothes-pic {
 
 
@@ -178,7 +321,7 @@
     position: relative;
     align-items: center;
     width: 1440px;
-
+    top: 80px;
     height: auto;
 
 }
@@ -224,6 +367,10 @@
     margin: 10% 5%;
 
     align-items: center;
+    z-index: 99;
+}
+.Product-item:hover {
+    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
     z-index: 100;
 }
 

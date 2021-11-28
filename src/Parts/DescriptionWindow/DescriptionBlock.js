@@ -1,6 +1,8 @@
 import React from "react";
 import {ProductCost} from "../ProductParts/ProductParts";
 import AttributeContainer from "./AttributeContainer";
+import './DescriptionWindow.css';
+import ButtonAdd from "./ButtonAdd";
 
 
 class DescriptionBlock extends React.Component {
@@ -8,15 +10,15 @@ class DescriptionBlock extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-            chosenAttributes: []
+            chosenAttributes: [],
+            cartButtonActive: false
         }
     }
 
-    handleChangeListAndDescriptionInDisc = ({chosenAttributes=this.state.chosenAttributes, active='products'}) => {
-        this.props.chosenItemDetailsContainer(chosenAttributes
-            .sort((a, b) => a.name > b.name ? 1:-1)
+    handleChangeListAndDescriptionInDisc = () => {
+        this.props.chosenItemDetailsContainer(this.state.chosenAttributes
+            .sort((a, b) => a.name > b.name ? 1 : -1)
         )
-        this.props.handleWindowChange(active)
     }
 
     attributesToCreateBagComp = (attrName, attrValue) => {
@@ -33,15 +35,19 @@ class DescriptionBlock extends React.Component {
                     value: attrValue,
                 }]
         }))
+        setTimeout(() =>  this.setState({
+            cartButtonActive: this.props.product.attributes.length===this.state.chosenAttributes.length
+        }), 50)
     }
 
     render () {
         return (
 
             <div className='Description-block'>
-
+                <div className='Description-item-name bold'>{this.props.product.brand}</div>
                 <div className='Description-item-name'>{this.props.product.name}</div>
-                <div className='Attributes-container'>{this.props.product.attributes.map(({name, items}) => (
+                <div className='Attributes-container'>{this.props.product.attributes
+                    .map(({name, items}) => (
                     <AttributeContainer
                         name={name}
                         items={items}
@@ -57,13 +63,17 @@ class DescriptionBlock extends React.Component {
                         prices={this.props.product.prices}
                     />
                 </div>
-                <div className='Add-to-cart-button-block'
-                     onClick={this.handleChangeListAndDescriptionInDisc}
-                >
-                    <div className='Add-to-cart-button'>ADD TO CART</div>
-                </div>
+
+                <ButtonAdd
+                    inStock={this.props.product.inStock}
+                    cartButtonActive={this.state.cartButtonActive}
+                    handleChangeListAndDescriptionInDisc={this.handleChangeListAndDescriptionInDisc}
+                    product={this.props.product}
+
+                />
                 <div className='Description-text-container'>
-                    <div className='Description-text' dangerouslySetInnerHTML={{__html: this.props.product.description}} ></div>
+                    <div id='description' className='Description-text'
+                    > </div>
                 </div>
 
             </div>

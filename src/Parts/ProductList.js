@@ -3,8 +3,7 @@ import './ProductParts/Product.css'
 import Product from "./ProductParts/Products";
 import {Query} from "@apollo/client/react/components";
 import {
-    PRODUCT_INFO_IDs,
-    PRODUCT_INFO_EACH_BASE
+    PRODUCT_INFO_EACH_BASE, PRODUCT_INFO_IDS_FUNC
 } from "../Queries";
 
 
@@ -15,28 +14,25 @@ class ProductListContainer extends React.Component {
         if (this.props.whatListActive === 'products' ) {
             return (
 
-                <Query query={PRODUCT_INFO_IDs}>
+                <Query query={PRODUCT_INFO_IDS_FUNC(this.props.categoryActive)}>
                     {({loading, error, data}) => {
                         if (loading) return <p>Loading...</p>;
                         if (error) return <p>Error :(</p>;
-                        return (data.categories.map(({name, products}) => {
-
-                            if (name === this.props.categoryActive) return (
-
+                        return (
                                 <div className='Up-product-container'>
-                                    <div className="Title">{name[0].toUpperCase() + name.slice(1)}</div>
+                                    <div className="Title">{data.category.name[0].toUpperCase() + data.category.name.slice(1)}</div>
                                     <div className='Product-container'>
                                         <ProductList
-                                            currency={this.props.currency}
                                             currencyName={this.props.currencyName}
                                             handleThingData={this.props.handleThingData}
-                                            products={products}
+                                            products={data.category.products}
                                             handleWindowChange={this.props.handleWindowChange}
+                                            chosenItemsDetailsContainer={this.props.chosenItemsDetailsContainer}
                                         />
                                     </div>
                                 </div>
-                            )
-                        }))
+
+                        )
                     }}
                 </Query>
             )
@@ -62,12 +58,12 @@ class ProductList extends React.Component {
                                      gallery={data.product.gallery}
                                      name={data.product.name}
                                      prices={data.product.prices}
-                                     currency={this.props.currency}
                                      currencyName={this.props.currencyName}
                                      handleThingData={this.props.handleThingData}
                                      productQuery={data.product}
                                      brand={data.product.brand}
                                      handleWindowChange={this.props.handleWindowChange}
+                                     chosenItemsDetailsContainer={this.props.chosenItemsDetailsContainer}
                             />
                         )
                     }}

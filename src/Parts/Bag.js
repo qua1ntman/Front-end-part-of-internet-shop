@@ -10,38 +10,40 @@ class Bag extends React.Component {
 
     handleWindowChange = (active) => {
         this.props.handleWindowChange(active)
-        this.props.handleOpenBag()
+        this.props.handleOpenBag(false)
+        setTimeout (() => this.props.pageScrollOn(), 50)
     }
 
     chosenRemoveItemsFunc = (id) => {
         if (this.props.chosenItemsDetailsContainer.length === 1) {
             this.props.chosenRemoveItemsFunc(id)
-            this.props.handleOpenBag()
+            this.props.handleOpenBag(false)
         } else {
             this.props.chosenRemoveItemsFunc(id)
         }
     }
 
-
     render() {
         return (
-            <div className={this.props.myBagActive ? 'Gray-bag-back Gray-bag-back-active' : 'Gray-bag-back'}>
-                <div className="Bag-container">
+            <div id='Bag-back'
+                 className={this.props.myBagActive ? 'Gray-bag-back Gray-bag-back-active' : 'Gray-bag-back'}
+
+            >
+                <div id='Bag' className="Bag-container"
+                     onClick={(event) => event.stopPropagation()}
+                >
                     <MyBag
                         chosenItems={this.props.chosenItemsDetailsContainer}
                     />
                     <ChosenThingsContainer
                         chosenItems={this.props.chosenItemsDetailsContainer}
-                        currency={this.props.currency}
                         currencyName={this.props.currencyName}
-                        // totalPriceChange={this.totalPriceChange.bind(this)}
                         totalBagPriceFunc={this.props.totalBagPriceFunc}
                         totalBagCountFunc={this.props.totalBagCountFunc}
                         changeCounter={this.props.changeCounter}
                         chosenRemoveItemsFunc={this.chosenRemoveItemsFunc}
                     />
                     <TotalPrice
-                        currency={this.props.currency}
                         currencyName={this.props.currencyName}
                         chosenItems={this.props.chosenItemsDetailsContainer}
                     />

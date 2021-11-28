@@ -109,6 +109,8 @@
 
     align-items: center;
     text-align: center;
+    background-color: #FFFFFF;
+    transition: all 0.2s;
 
 }
 
@@ -131,7 +133,7 @@
     margin: 0;
 
     bottom: 16px;
-    right: 7px;
+    right: 6px;
 }
 
 .Choosing-thing-text-cart {
@@ -242,7 +244,7 @@
 }
 
 .btn-slide {
-    background-color: #eaeaea;
+    background-color: #1D1F22;
 
     width: 10px;
     height: 20px;
@@ -251,6 +253,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    transition: all 0.2s;
+
 
 }
 
@@ -263,9 +267,14 @@
     right: 0px;
 }
 
+.slider-btn-img {
+    width: 6px;
+    height: 12px
+}
+
 .Delete-button-cart {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     color: #FFFFFF;
     background-color: #1D1F22;
     border: 1px solid;
@@ -275,7 +284,7 @@
     font-family: Source Sans Pro;
     font-style: normal;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 160%;
 
     align-items: center;
@@ -285,7 +294,10 @@
     right: 0px;
     top: 0;
     z-index: 104;
+    transition: all 0.2s;
 }
+
+
 
 .Price-of-chosen-thing-block {
 
@@ -305,7 +317,6 @@
     height: 20px;
     width: 200px;
     font-family: Raleway;
-    /*margin-bottom: 10px;*/
     text-align: left;
 
     display: flex;
@@ -313,7 +324,6 @@
 }
 
 .Attribute-name {
-    /*align-items: center;*/
     font-size: 16px;
     position: relative;
     top: 50%;
@@ -324,24 +334,28 @@
 }
 
 .Attribute-value {
-    /*position: absolute;*/
 
     margin: 0px;
 
     height: 15px;
     width: 30px;
     align-items: center;
-    /*text-align: center;*/
 }
 
-/*.Attribute-value-text {*/
-/*    position: relative;*/
-/*    top: 10px;*/
-/*    height: 45px;*/
-/*}*/
+.Color-block-cart {
+    border: #1D1F22 solid 1px;
+}
+
 
 .Attribute-item-button {
     position: relative;
     height: 45px;
     font-size: 14px;
+}
+
+.Button-block:hover, .Delete-button-cart:hover {
+    filter: drop-shadow(0px 2px 5px rgba(168, 172, 176, 1));
+}
+.btn-slide:hover{
+    filter: drop-shadow(0px 1px 5px rgba(168, 172, 176, 1));
 }

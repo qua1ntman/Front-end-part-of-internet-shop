@@ -1,17 +1,37 @@
 import {gql} from "@apollo/client"
 
-const PRODUCT_INFO_IDs = gql`
+const PRODUCT_INFO_CURRENCIES = gql`
+    {
+        currencies
+    }`
+
+const PRODUCT_INFO_IDS_FUNC = (item) => {
+    return (gql`
+        {
+            category (input: {title: "${item}"}){
+                name
+                products {
+                    id
+                    name
+                }
+            }
+        }`
+    )
+}
+
+const PRODUCT_INFO_CATEGORIES = gql`
     {
         categories {
             name
-            products {
-                name
-                id
-            }
+
         }
     }`
 
-let PRODUCT_INFO_EACH_BASE = function (item) {
+// products {
+//     name
+// }
+
+let PRODUCT_INFO_EACH_BASE = (item) => {
 
     return (gql`{
         product (id: "${item}") {
@@ -39,5 +59,7 @@ let PRODUCT_INFO_EACH_BASE = function (item) {
 
 
 export {
-    PRODUCT_INFO_IDs,
+    PRODUCT_INFO_CURRENCIES,
+    PRODUCT_INFO_CATEGORIES,
+    PRODUCT_INFO_IDS_FUNC,
     PRODUCT_INFO_EACH_BASE}

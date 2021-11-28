@@ -27,7 +27,6 @@ class CartItemsContainer extends React.Component {
                                 pics={item.pics}
                                 attributes={item.attributes}
                                 prices={item.prices}
-                                currency={this.props.currency}
                                 currencyName={this.props.currencyName}
                                 totalBagPriceFunc={this.props.totalBagPriceFunc}
                                 totalBagCountFunc={this.props.totalBagCountFunc}
@@ -42,7 +41,7 @@ class CartItemsContainer extends React.Component {
                 </div>
             )
         }
-        return <div className='Empty-cart-word'>Your cart is empty</div>
+        return <div className='Empty-cart-word'>My cart is empty</div>
     }
 }
 

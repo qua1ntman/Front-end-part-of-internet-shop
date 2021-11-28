@@ -22,7 +22,8 @@ class PhotosDescription extends React.Component {
                 > {this.props.gallery.slice(0, 4).map((item) =>
                     (<div className='Description-pic'
                           onClick={() =>this.handleChangeMainPhoto(item)}>
-                            <img src={item}
+                            <img alt={item}
+                                 src={item}
                                  className='Pic-size-description'
                             />
                         </div>
@@ -30,6 +31,7 @@ class PhotosDescription extends React.Component {
                 </div>
 
                 <div className='Main-pic'><img
+                    alt={this.state.mainPhoto}
                     src={this.state.mainPhoto}
                     className='Main-pic-size'
                 />

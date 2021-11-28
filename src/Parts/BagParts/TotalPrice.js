@@ -13,7 +13,6 @@ class TotalPrice extends React.Component {
                 </div>
                 <div className='Total-price-part'>
                     <TotalPriceCounter
-                        currencyProd={this.props.currency}
                         currencyName={this.props.currencyName}
                         chosenItems={this.props.chosenItems}
                     />

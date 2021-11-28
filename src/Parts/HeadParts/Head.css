@@ -4,13 +4,13 @@
     width: 1440px;
     border-radius: 0;
 
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
+    position: fixed;
+
+    top: 0px;
     bottom: 0;
 
     background: #FFFFFF;
+    z-index: 105;
 }
 
 .Navig {
@@ -38,9 +38,6 @@
     left: 16px;
     top: 4px;
 
-
-    /* Inside Auto Layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -54,7 +51,6 @@
     left: 0;
     top: 0;
     border-radius: 0;
-    /* Auto Layout */
 
     display: flex;
     flex-direction: row;
@@ -64,9 +60,6 @@
     position: static;
     bottom: 0;
 
-
-    /* Inside Auto Layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -74,9 +67,6 @@
 }
 
 .Navig-text {
-    /* Label */
-
-
     position: static;
     height: 20px;
     left: 0;
@@ -88,19 +78,13 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 120%;
-    /* identical to box height, or 19px */
 
     display: flex;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
 
-    /* --c-primary */
-
     color: #000000;
-
-
-    /* Inside Auto Layout */
 
     flex: none;
     order: 0;
@@ -116,16 +100,11 @@
 
 
 .Line-under-text {
-    /* Border */
-
-
     position: static;
     height: 2px;
     left: 0;
     right: 0;
     bottom: 0;
-
-    /* Inside Auto Layout */
 
     flex: none;
     order: 1;
@@ -148,6 +127,12 @@
     position: absolute;
 }
 
+.Logo-img {
+    width: 41px;
+}
+
+
+
 .Actions {
     display: flex;
     flex-direction: row;
@@ -162,21 +147,13 @@
     top: 23px;
 }
 
-/*noinspection ALL*/
 .Currency-container {
-    position: static;
-    width: 38px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 50px;
     height: 29px;
-    left: 124px;
-    top: 5.5px;
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    margin: 0;
+    left: 80px;
 }
 
 .Spacer-xl {
@@ -188,8 +165,6 @@
 
     opacity: 1;
 
-    /* Inside Auto Layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -197,70 +172,43 @@
 }
 
 .Currency-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-
-    position: absolute;
-    width: 25px;
+    position: relative;
+    min-width: 25px;
     height: 29px;
-    left: 100px;
-    top: 6px;
-    transform: translateX(10px);
-
-}
+    width: auto;
+  }
 
 .Currency {
 
-    /*$*/
-
-    position: static;
-    width: 18px;
+    position: relative;
+    min-width: 18px;
     height: 29px;
-    left: 10px;
-    top: 0;
-
-    /* --price-regular-font */
+    width: auto;
 
     font-family: Raleway;
     font-style: normal;
     font-weight: 1000;
     font-size: 18px;
     line-height: 160%;
-    /* identical to box height, or 29px */
-
-    display: flex;
-    align-items: flex-end;
-
-    /* --c-black */
 
     color: #1D1F22;
 
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0 12px;
+    margin: 0;
 
     text-align: center;
 }
 
 .Converter {
-    /* Rectangle 2136 */
     width: 114px;
     height: auto;
     display: flex;
     flex-direction: column;
 
     position: absolute;
-    left: 1235px;
+    left: 2200px;
     top: 65px;
 
     background: #FFFFFF;
-    /* Shadow */
 
     filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.30));
 
@@ -271,6 +219,7 @@
 }
 
 .Converter-active {
+    left: 1200px;
     opacity: 1;
     z-index: 103;
 }
@@ -280,9 +229,6 @@
     height: 29px;
     width: 66px;
     border-radius: 0;
-
-    /* Label */
-
 
     position: static;
     left: 0;
@@ -295,14 +241,9 @@
     font-weight: 1000;
     font-size: 18px;
     line-height: 160%;
-    /* identical to box height, or 29px */
-
     text-align: center;
 
     color: #1D1F22;
-
-
-    /* Inside Auto Layout */
 
     flex: none;
     order: 0;
@@ -319,18 +260,16 @@
 
 
 .Vector-block {
-    position: absolute;
+    position: relative;
     height: 29px;
     width: 8px;
-    left: 68%;
-    right: 20.59%;
-    top: 53.75%;
-    bottom: 38.75%;
-    align-items: center;
 }
 
 .Vector {
-    position: absolute;
+    position: relative;
+    top: 50%;
+    width: 6px;
+    height: 3px
 }
 
 .Is-empty {
@@ -351,6 +290,10 @@
     order: 3;
     flex-grow: 0;
     margin-right: 22px;
+}
+
+.Empty-cart-img {
+    width: 20px;
 }
 
 .Circle {

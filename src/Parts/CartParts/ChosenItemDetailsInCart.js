@@ -49,6 +49,7 @@ class ItemPhotoSlider extends React.Component {
                                 className={this.state.slideIndex === this.props.pics.indexOf(obj) + 1 ? "slide active-anim" : "slide"}
                             >
                                 <img
+                                    alt={obj}
                                     className='Img-props'
                                     src={obj}
                                 />
@@ -91,10 +92,8 @@ class ItemPriceCart extends React.Component {
         return (
             <div className='Cost-in-bag-block-cart'>
                 <ItemCostInCart
-                    currencyProd={this.props.currency}
                     currencyName={this.props.currencyName}
                     prices={this.props.prices}
-                    counter={this.props.counter}
                 />
             </div>
         )

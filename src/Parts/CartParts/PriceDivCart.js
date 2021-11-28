@@ -7,7 +7,7 @@ class PriceDivCart extends React.Component {
         return (
             <div
                 className='Price-of-chosen-thing-block'>
-                {this.props.currency}{this.props.cost}
+                {this.props.cost}
             </div>
         )
     }

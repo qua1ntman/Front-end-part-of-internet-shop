@@ -4,24 +4,6 @@ import ChosenThings from "./ChosenThing";
 
 class ChosenThingsContainer extends React.Component {
 
-
-    // totalBagPriceFunc = (item) => {
-    //     this.props.totalBagPriceFunc(item)
-    // }
-    //
-    // totalBagCountFunc = (item) => {
-    //     this.props.totalBagCountFunc(item)
-    // }
-
-    // changeCounter = (id, counter) => {
-    //     this.props.changeCounter (id, counter)
-    // }
-
-    // chosenRemoveItemsFunc = (id) => {
-    //     this.props.chosenRemoveItemsFunc(id)
-    //
-    // }
-
     render() {
         return (
             <div id='container' className='Chosen-things-container-bag'>
@@ -34,8 +16,7 @@ class ChosenThingsContainer extends React.Component {
                                     pics={item.pics}
                                     attributes={item.attributes}
                                     prices={item.prices}
-                                    currency2={this.props.currency}
-                                    currencyName2={this.props.currencyName}
+                                    currencyName={this.props.currencyName}
                                     totalBagPriceFunc={this.props.totalBagPriceFunc}
                                     totalBagCountFunc={this.props.totalBagCountFunc}
                                     changeCounter={this.props.changeCounter}
