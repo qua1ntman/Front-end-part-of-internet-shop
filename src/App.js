@@ -12,7 +12,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             currencyName: 'USD',
-            categoryActive: 'tech',
+            categoryActive: 'clothes',
             productObj: '',
             chosenItemsDetailsContainer: [],
             totalBagPrice: [],

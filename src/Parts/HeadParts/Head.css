@@ -239,7 +239,7 @@
     font-family: Raleway;
     font-style: normal;
     font-weight: 1000;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 160%;
     text-align: center;
 
@@ -248,7 +248,7 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-    padding:  17px 30px 10px 18px;
+    padding:  17px 26px 10px 22px;
     transition: background-color 0.4s;
 }
 

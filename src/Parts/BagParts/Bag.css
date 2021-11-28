@@ -74,17 +74,15 @@
 
 .Chosen-things-container-bag {
 
-    overflow-y: scroll;
-    overflow-x: hidden;
 
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    min-height: 1px;
+    min-height: 140px;
     height: auto;
-    max-height: 420px;
+    max-height: 480px;
 
     width: 340px;
 
@@ -94,15 +92,20 @@
     margin-bottom: 50px;
 }
 
-.Chosen-things-container-bag::-webkit-scrollbar {
+.Chosen-things-container-bag-3-more {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.Chosen-things-container-bag-3-more::-webkit-scrollbar {
     width: 10px;
 }
 
-.Chosen-things-container-bag::-webkit-scrollbar-track {
+.Chosen-things-container-bag-3-more::-webkit-scrollbar-track {
     background: #FFFFFF;
 }
 
-.Chosen-things-container-bag::-webkit-scrollbar-thumb {
+.Chosen-things-container-bag-3-more::-webkit-scrollbar-thumb {
     background-color: #1D1F22;
     border-radius: 20px;
     border: 2px solid #d2d2d2;
@@ -110,7 +113,7 @@
 
 .One-chosen-thing-bag {
     position: relative;
-    min-height: 120px;
+    min-height: 137px;
     height: 120px;
 
     width: 293px;
@@ -232,7 +235,7 @@
     text-align: center;
 
     position: absolute;
-    left: 270px;
+    left: 275px;
     top: 0;
     z-index: 104;
     transition: all 0.2s;
@@ -295,7 +298,7 @@
 
 
 .Img-props-bag {
-    position: absolute;
+    position: relative;
     max-height: 137px;
     max-width: 105px;
     width: auto;
@@ -458,7 +461,7 @@
 }
 
 .Bag-buttons:hover, .Back-to-products:hover {
-    filter: drop-shadow(0px 5px 5px rgba(168, 172, 176, 1));
+    filter: drop-shadow(0px 2px 5px rgba(168, 172, 176, 1));
 }
 
 .Button-block-bag:hover, .Delete-button:hover {

@@ -29,8 +29,7 @@ class Converter extends React.Component{
                                 <div key={item}
                                      className='Each-currency'
                                      onClick={() => this.clickerFunc(item)}
-                                >
-                                    {item}
+                                >{item}
                                 </div>
                             )
                         }
