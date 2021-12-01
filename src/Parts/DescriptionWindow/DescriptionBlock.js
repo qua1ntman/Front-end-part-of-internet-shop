@@ -3,6 +3,7 @@ import {ProductCost} from "../ProductParts/ProductParts";
 import AttributeContainer from "./AttributeContainer";
 import './DescriptionWindow.css';
 import ButtonAdd from "./ButtonAdd";
+import DescriptionText from "./DescriptionText";
 
 
 class DescriptionBlock extends React.Component {
@@ -71,11 +72,9 @@ class DescriptionBlock extends React.Component {
                     product={this.props.product}
 
                 />
-                <div className='Description-text-container'>
-                    <div id='description' className='Description-text'
-                    > </div>
-                </div>
-
+                <DescriptionText
+                    description={this.props.product.description}
+                />
             </div>
         )
     }

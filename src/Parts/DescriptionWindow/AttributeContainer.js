@@ -33,6 +33,7 @@ class AttributeContainer extends React.Component {
                         <Attributes
                             name={this.props.name}
                             value={value}
+                            displayValue={displayValue}
                             SelectAttribute={this.SelectAttribute}
                             attributeSelected={this.state.attributeSelected}
                             SelectAttributeInBag={this.SelectAttributeInBag}

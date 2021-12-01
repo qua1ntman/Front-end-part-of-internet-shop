@@ -8,7 +8,7 @@ class ChosenAttributeInCart extends React.Component {
     render() {
         return (
             <div className='Attribute'>
-                <div className='Attribute-name'><strong style={{'top': '50%'}}>{this.props.name}: </strong></div>
+                <div className='Attribute-name'>{this.props.name}: </div>
                 <ChosenAttributeValue
                     name={this.props.name}
                     value={this.props.value}

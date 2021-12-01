@@ -7,7 +7,7 @@ class ItemPhoto extends React.Component {
     render() {
         return (
             <div className='Pic-of-thing-bag'>
-                <img alt={this.props.photo} src={this.props.photo} className='Img-props-bag'/>
+                <img alt="img" src={this.props.photo} className='Img-props-bag'/>
             </div>
         )
     }

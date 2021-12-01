@@ -5,6 +5,11 @@ import {PRODUCT_INFO_CATEGORIES} from "../../Queries";
 
 class NavigButton extends React.Component {
 
+    categorySwitch = (name) => {
+        this.props.handleChangeCategory(name)
+        this.props.handleWindowChange('products')
+    }
+
     render() {
         return (
             <Query query={PRODUCT_INFO_CATEGORIES}>
@@ -13,8 +18,7 @@ class NavigButton extends React.Component {
                     if (error) return <p>Error :(</p>;
                     return data.categories.map(({name}) => (
                         <div className="Category-block"
-                             onClick={() => this.props.handleChangeCategory(name)
-                                 && this.props.handleWindowChange('products')}
+                             onClick={() => this.categorySwitch(name)}
                         >
                             <div className='Each-navig-container'>
                                 <div  className={this.props.categoryActive === name ? 'Navig-text Active-text' : 'Navig-text'}>{name.toUpperCase()}</div>

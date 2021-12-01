@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import './Parts/ProductParts/Product.css'
 import Head from './Parts/Head'
-import ProductListContainer from "./Parts/ProductList";
 import DescriptionWindow from "./Parts/DescriptionWindow";
 import Cart from "./Parts/Cart";
+import ProductListContainer from "./Parts/ProductListContainer";
 
 
 class App extends React.Component {
@@ -113,20 +113,20 @@ class App extends React.Component {
 
 
 
-    appOnclick = () => {
+    appOnclick = (appRef) => {
         this.handleOpenBag(false)
         this.handleConverterActive(false)
-        document.getElementById('Base').classList.remove('Remove-scroll')
+        appRef.current.classList.remove('Remove-scroll')
 
     }
 
     render() {
-
+        let appRef = React.createRef()
 
         return (
-            <div id='Base' className='Base'>
+            <div ref={appRef} className='Base'>
                 <div className="App"
-                     onClick={() => this.appOnclick()}>
+                     onClick={() => this.appOnclick(appRef)}>
                     <Head
                         currencyName={this.state.currencyName}
                         category={this.state.category}
@@ -147,6 +147,7 @@ class App extends React.Component {
                         myBagActive={this.state.myBagActive}
                         handleOpenBag={this.handleOpenBag}
                         handleConverterActive={this.handleConverterActive}
+                        appRef={appRef}
 
 
                     />

@@ -16,11 +16,11 @@ class Actions extends React.Component{
 
 
     pageScrollOff = () => {
-        document.getElementById('Base').classList.add('Remove-scroll')
+        this.props.appRef.current.classList.add('Remove-scroll')
     }
 
     pageScrollOn = () => {
-        document.getElementById('Base').classList.remove('Remove-scroll')
+        this.props.appRef.current.classList.remove('Remove-scroll')
     }
 
     handleOpenBag = (event) => {
@@ -83,7 +83,7 @@ class Actions extends React.Component{
                             }).format(0).toString().replace('0','')}</p>
                         </div>
                         <div className='Vector-block'>
-                            <img alt='' className='Vector' src={this.props.converterActive ? `${vectorUp}` : `${vector}`}
+                            <img alt="img" className='Vector' src={this.props.converterActive ? `${vectorUp}` : `${vector}`}
                                  />
                         </div>
                     </div>
@@ -94,7 +94,7 @@ class Actions extends React.Component{
                             <div className={sum > 0 ? 'Circle Circle-active' : 'Circle'} >
                                 <div className= 'Num-in-circle'>{sum}</div>
                             </div>
-                            <img alt={emptyCart} src={emptyCart} className='Empty-cart-img'/>
+                            <img alt="img" src={emptyCart} className='Empty-cart-img'/>
                         </div>
 
                 </div>

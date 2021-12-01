@@ -24,7 +24,7 @@ class PlusUnitButton extends React.Component {
 
 class MinusUnitButton extends React.Component {
 
-    changeCounterMinus = ({counterChange=this.props.counter-1}) => {
+    changeCounterMinus = ({counterChange=this.props.counter===1 ? 1 : this.props.counter-1}) => {
         this.props.changeCounter(counterChange)
         setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
     }

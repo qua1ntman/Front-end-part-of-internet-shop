@@ -209,9 +209,7 @@
     bottom: 20px;
     display: flex;
     align-items: center;
-
-
-} img{
+} img {
      display: block;
      margin: 0 auto;
  }
@@ -232,7 +230,7 @@
     opacity: 1;
 }
 
-.Img-props{
+.Img-props {
     max-height: 185px;
     max-width: 141px;
     width: auto;
@@ -325,12 +323,13 @@
 
 .Attribute-name {
     font-size: 16px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
     position: relative;
     top: 50%;
     margin-top: -0.625em;
     margin-right: 5px;
-
-
 }
 
 .Attribute-value {
@@ -349,7 +348,10 @@
 
 .Attribute-item-button {
     position: relative;
-    height: 45px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    top: 2px;
     font-size: 14px;
 }
 

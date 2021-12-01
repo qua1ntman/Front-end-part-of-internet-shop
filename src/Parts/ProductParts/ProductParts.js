@@ -9,7 +9,7 @@ class ProductPic extends React.Component {
     render(){
         return (
             <div className='Clothes-pic' >
-                <img className='Pic-size' alt={this.props.gallery[0]} src={this.props.gallery[0]}/>
+                <img className='Pic-size' alt="img" src={this.props.gallery[0]}/>
             </div>
         )
     }

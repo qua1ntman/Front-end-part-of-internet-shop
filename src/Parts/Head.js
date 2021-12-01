@@ -37,6 +37,7 @@ class Head extends React.Component  {
                     myBagActive={this.props.myBagActive}
                     handleOpenBag={this.props.handleOpenBag}
                     handleConverterActive={this.props.handleConverterActive}
+                    appRef={this.props.appRef}
                 />
             </div>
         )

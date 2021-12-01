@@ -13,7 +13,11 @@ class ButtonAdd extends React.Component {
             )
         } else if (this.props.inStock===false) {
             return (
-            <div></div>
+                <div className='Add-to-cart-button-block Button-not-active'
+                     onClick={this.props.handleChangeListAndDescriptionInDisc}
+                >
+                    <div className='Add-to-cart-button'>OUT OF STOCK</div>
+                </div>
             )
         } else if (this.props.cartButtonActive===false && this.props.product.attributes.length===0 && this.props.inStock===true){
             return (

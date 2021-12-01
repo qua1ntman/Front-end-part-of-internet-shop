@@ -41,6 +41,7 @@ class ChoseProdInPLPWindow extends React.Component {
                         <AttributesInPLP
                             name={this.props.name}
                             value={value}
+                            displayValue={displayValue}
                             SelectAttribute={this.SelectAttribute}
                             attributeSelected={this.state.attributeSelected}
                             SelectAttributeInBag={this.SelectAttributeInBag}

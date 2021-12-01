@@ -5,7 +5,6 @@ import circleIcon from '../../items/Circle Icon.png'
 import AttributeContainerInPLP from "./AttributeContainerInPLP";
 
 
-
 class Product extends React.Component {
     constructor(props) {
         super(props);
@@ -25,15 +24,13 @@ class Product extends React.Component {
             prices: this.props.productQuery.prices,
             attributes: attributes
         });
-        setTimeout(() => console.log(this.props.productQuery.name+attributes.map(item => item.value)),100)
     }
 
 
     handleChangeClick = (val1, val2) => {
         this.props.handleWindowChange(val1)
         this.props.handleThingData(val2)
-        console.log(this.props.productQuery.attributes.length)
-        setTimeout(() => document.getElementById('description').innerHTML=`${this.props.productQuery.description}`, 100)
+
     }
 
     choseProdInPLPClick = (bool) => {
@@ -85,7 +82,7 @@ class Product extends React.Component {
                                 ? this.choseProdInPLPClickEvent(event, this.state.attributesInPLPActive!==true)
                                 : this.choseProdInPLPClickByGreen(event, [])}
                         >
-                            <img alt={circleIcon} src={circleIcon} className='Green-icon-img'/>
+                            <img alt="img" src={circleIcon} className='Green-icon-img'/>
                         </div>
                     </div>
                 </div>
@@ -103,6 +100,7 @@ class OutOfStock extends React.Component {
             return (
             <div className='Out-of-stock-active'
                  onClick={() => this.props.handleChangeClick('description', this.props.productQuery)}
+
             >
                 <div className='Out-of-stock-text'>OUT OF STOCK</div>
             </div>

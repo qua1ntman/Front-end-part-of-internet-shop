@@ -1,7 +1,8 @@
 import React from 'react';
+
 import './DescriptionWindow/DescriptionWindow.css'
 import DescriptionBlock from "./DescriptionWindow/DescriptionBlock";
-import PhotosDescription from "./DescriptionWindow/PhotosDescription";
+import DescriptionDetails from "./DescriptionWindow/DescriptionDetails";
 import {BackButton} from "./BagParts/Buttons";
 
 
@@ -41,8 +42,9 @@ class DescriptionWindow extends React.Component {
                         />
                     </div>
                     <div className='Description-window'>
-                        <PhotosDescription
+                        <DescriptionDetails
                             gallery={this.props.product.gallery}
+                            product={this.props.product}
                         />
                         <DescriptionBlock
                             product={this.props.product}
@@ -61,6 +63,8 @@ class DescriptionWindow extends React.Component {
             <div></div>
         )
     }
+
 }
+
 
 export default DescriptionWindow
