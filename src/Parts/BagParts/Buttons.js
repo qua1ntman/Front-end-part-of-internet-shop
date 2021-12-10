@@ -5,15 +5,15 @@ import './Bag.css'
 
 class PlusUnitButton extends React.Component {
 
-    changeCounterPlus = ({counterChange=this.props.counter+1}) => {
-        this.props.changeCounter(counterChange)
-        setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
+    async changeCounterPlus({counterChange=this.props.counter+1}) {
+        await this.props.changeCounter(counterChange)
+        await this.props.totalBagPriceFunc() && this.props.totalBagCountFunc()
     }
 
     render() {
         return (
         <div className='Button-block-bag Plus-Size1-bag'
-            onClick={this.changeCounterPlus}
+            onClick={this.changeCounterPlus.bind(this)}
         >+</div>
         )
     }
@@ -21,15 +21,15 @@ class PlusUnitButton extends React.Component {
 
 class MinusUnitButton extends React.Component {
 
-    changeCounterMinus = ({counterChange=this.props.counter===1 ? 1 : this.props.counter-1}) => {
-        this.props.changeCounter(counterChange)
-        setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
+    async changeCounterMinus({counterChange=this.props.counter===1 ? 1 : this.props.counter-1}) {
+        await this.props.changeCounter(counterChange)
+        await this.props.totalBagPriceFunc() && this.props.totalBagCountFunc()
     }
 
     render() {
         return (
             <div className='Button-block-bag Minus-Size1-bag'
-                onClick={this.changeCounterMinus}
+                onClick={this.changeCounterMinus.bind(this)}
             >-</div>
         )
     }

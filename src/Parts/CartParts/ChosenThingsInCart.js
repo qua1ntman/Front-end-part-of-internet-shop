@@ -5,7 +5,12 @@ import {ItemPhotoSlider, ItemPriceCart, ItemTitle, ThingCounter} from "./ChosenI
 import ChosenAttribute from "./ChosenAttributeInCart";
 
 class ChosenThingsInCart extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            slideIndex: 1,
+        }
+    }
 
     totalBagPriceFunc = () => {
         this.props.totalBagPriceFunc({
@@ -26,6 +31,11 @@ class ChosenThingsInCart extends React.Component {
         this.props.changeCounter ({id: this.props.id, counter: counter})
     }
 
+    handleChangeSlideIndex = (idx) => {
+        this.setState({
+            slideIndex: idx
+        })
+    }
 
     render() {
 
@@ -70,9 +80,14 @@ class ChosenThingsInCart extends React.Component {
                 <DeleteItemButtonInCart
                     chosenRemoveItemsFunc={this.props.chosenRemoveItemsFunc}
                     id={this.props.id}
+                    handleChangeSlideIndex={this.handleChangeSlideIndex}
                 />
 
-                <ItemPhotoSlider pics={this.props.pics}/>
+                <ItemPhotoSlider
+                    pics={this.props.pics}
+                    slideIndex={this.state.slideIndex}
+                    handleChangeSlideIndex={this.handleChangeSlideIndex}
+                />
             </div>
         )
     }

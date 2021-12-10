@@ -6,15 +6,15 @@ import left from '../../items/Vector_left.png'
 
 class PlusUnitButton extends React.Component {
 
-    changeCounterPlus = ({counterChange=this.props.counter+1}) => {
-        this.props.changeCounter(counterChange)
-        setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
+    async changeCounterPlus({counterChange=this.props.counter+1}){
+        await this.props.changeCounter(counterChange)
+        await this.props.totalBagPriceFunc() && this.props.totalBagCountFunc()
     }
 
     render() {
         return (
         <div className='Button-block Plus-Size1'
-            onClick={this.changeCounterPlus}
+            onClick={this.changeCounterPlus.bind(this)}
         >
             <div className='Unit-place'>+</div>
         </div>
@@ -24,15 +24,15 @@ class PlusUnitButton extends React.Component {
 
 class MinusUnitButton extends React.Component {
 
-    changeCounterMinus = ({counterChange=this.props.counter===1 ? 1 : this.props.counter-1}) => {
-        this.props.changeCounter(counterChange)
-        setTimeout(() => this.props.totalBagPriceFunc() && this.props.totalBagCountFunc(), 50)
+    async changeCounterMinus({counterChange=this.props.counter===1 ? 1 : this.props.counter-1}) {
+        await this.props.changeCounter(counterChange)
+        await this.props.totalBagPriceFunc() && this.props.totalBagCountFunc()
     }
 
     render() {
         return (
             <div className='Button-block Minus-Size1'
-                onClick={this.changeCounterMinus}
+                onClick={this.changeCounterMinus.bind(this)}
             >
                 <div className='Unit-place'>-</div>
             </div>
@@ -60,7 +60,8 @@ class BtnSlider extends React.Component {
 
 class DeleteItemButtonInCart extends React.Component {
 
-    chosenRemoveItemsFunc = ({id=this.props.id}) => {
+    chosenRemoveItemsFunc = ({id = this.props.id}) => {
+        this.props.handleChangeSlideIndex(1)
         this.props.chosenRemoveItemsFunc(id)
     }
 

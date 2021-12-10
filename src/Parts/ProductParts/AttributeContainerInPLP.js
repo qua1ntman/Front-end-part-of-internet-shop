@@ -23,7 +23,7 @@ class AttributeContainerInPLP extends React.Component {
         console.log(this.state.choseAllAttributes)
     }
 
-    attributesToCreateBagComp = (attrName, attrValue) => {
+    async attributesToCreateBagComp(attrName, attrValue) {
 
         this.setState(prevState => ({
             chosenAttributes: this.state.chosenAttributes.filter(item => item.name === attrName).length > 0
@@ -38,14 +38,14 @@ class AttributeContainerInPLP extends React.Component {
                 }],
 
         }))
-        setTimeout(() => this.setState({
+        await this.setState({
             choseAllAttributes: this.props.product.attributes.length!==this.state.chosenAttributes.length
-        }), 50)
-        setTimeout(() => this.props.choseProdInPLPClick(this.state.chosenAttributes.length!==this.props.product.attributes.length), 100)
-        setTimeout(() => console.log(this.state.chosenAttributes), 100)
-        setTimeout(() => this.state.chosenAttributes.length===this.props.product.attributes.length ?
-            this.reloadAndPush() : null, 150)
+        })
+        await this.props.choseProdInPLPClick(this.state.chosenAttributes.length!==this.props.product.attributes.length)
 
+        if (this.state.chosenAttributes.length===this.props.product.attributes.length) {
+            await this.reloadAndPush()
+        }
 
     }
 
@@ -60,7 +60,7 @@ class AttributeContainerInPLP extends React.Component {
                         <ChoseProdInPLPWindow
                             name={name}
                             items={items}
-                            attributesToCreateBagComp={this.attributesToCreateBagComp}
+                            attributesToCreateBagComp={this.attributesToCreateBagComp.bind(this)}
                             chosenAttributesSort={this.chosenAttributesSort}
                             choseAttributes={this.props.attributesInPLPActive}
                         />

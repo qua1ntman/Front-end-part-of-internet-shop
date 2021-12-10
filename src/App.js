@@ -549,13 +549,13 @@ class App extends React.Component {
         })
     }
 
-    chosenItemsDetailsContainerFunc = (elem) => {
-        this.setState(prevState  => ({
+    async chosenItemsDetailsContainerFunc(elem) {
+        await this.setState(prevState  => ({
             chosenItemsDetailsContainer:  this.state.chosenItemsDetailsContainer.filter(item => item.id === elem.id).length > 0
             ? this.state.chosenItemsDetailsContainer.map(item => item.id === elem.id ? {...item, counter: item.counter+1} : item)
             : [...prevState.chosenItemsDetailsContainer, elem]
         }))
-        setTimeout(() => console.log(this.state.chosenItemsDetailsContainer), 100)
+        await console.log(this.state.chosenItemsDetailsContainer)
     }
 
     chosenRemoveItemsFunc = (id) => {
@@ -663,14 +663,14 @@ class App extends React.Component {
                         handleThingData={this.handleThingData}
                         handleWindowChange={this.handleWindowChange}
                         whatListActive={this.state.whatListActive}
-                        chosenItemsDetailsContainer={this.chosenItemsDetailsContainerFunc}
+                        chosenItemsDetailsContainer={this.chosenItemsDetailsContainerFunc.bind(this)}
                         data={this.state.data}
                     />
                     <DescriptionWindow
                         product={this.state.productObj}
                         currency={this.state.currency}
                         currencyName={this.state.currencyName}
-                        chosenItemsDetailsContainer={this.chosenItemsDetailsContainerFunc}
+                        chosenItemsDetailsContainer={this.chosenItemsDetailsContainerFunc.bind(this)}
                         handleWindowChange={this.handleWindowChange}
                         whatListActive={this.state.whatListActive}
                     />

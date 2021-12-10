@@ -22,9 +22,9 @@ class DescriptionBlock extends React.Component {
         )
     }
 
-    attributesToCreateBagComp = (attrName, attrValue) => {
+    async attributesToCreateBagComp(attrName, attrValue) {
 
-        this.setState(prevState => ({
+        await this.setState(prevState => ({
             chosenAttributes: this.state.chosenAttributes.filter(item => item.name === attrName).length > 0
                 ? this.state.chosenAttributes.map( item => item.name === attrName
                     ? {
@@ -36,9 +36,9 @@ class DescriptionBlock extends React.Component {
                     value: attrValue,
                 }]
         }))
-        setTimeout(() =>  this.setState({
+        await this.setState({
             cartButtonActive: this.props.product.attributes.length===this.state.chosenAttributes.length
-        }), 50)
+        })
     }
 
     render () {
@@ -52,7 +52,7 @@ class DescriptionBlock extends React.Component {
                     <AttributeContainer
                         name={name}
                         items={items}
-                        attributesToCreateBagComp={this.attributesToCreateBagComp}
+                        attributesToCreateBagComp={this.attributesToCreateBagComp.bind(this)}
 
                     />
                 )) || <div></div>} </div>

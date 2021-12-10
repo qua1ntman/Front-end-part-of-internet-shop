@@ -8,34 +8,34 @@ class ItemPhotoSlider extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            slideIndex: 1,
+            // slideIndex: 1,
             sliderData: this.props.pics
         }
     }
 
-    handleChangeSlideIndex = (idx) => {
-        this.setState({
-            slideIndex: idx
-        })
-    }
+    // handleChangeSlideIndex = (idx) => {
+    //     this.setState({
+    //         slideIndex: idx
+    //     })
+    // }
 
 
 
     render() {
 
         let nextSlide = () => {
-            if (this.state.slideIndex !== this.props.pics.length) {
-                this.handleChangeSlideIndex(this.state.slideIndex + 1)
-            } else if (this.state.slideIndex === this.props.pics.length) {
-                this.handleChangeSlideIndex(1)
+            if (this.props.slideIndex !== this.props.pics.length) {
+                this.props.handleChangeSlideIndex(this.props.slideIndex + 1)
+            } else if (this.props.slideIndex === this.props.pics.length) {
+                this.props.handleChangeSlideIndex(1)
             }
         }
 
         let prevSlide = () => {
-            if (this.state.slideIndex !== 1) {
-                this.handleChangeSlideIndex(this.state.slideIndex - 1)
-            } else if (this.state.slideIndex === 1) {
-                this.handleChangeSlideIndex(this.props.pics.length)
+            if (this.props.slideIndex !== 1) {
+                this.props.handleChangeSlideIndex(this.props.slideIndex - 1)
+            } else if (this.props.slideIndex === 1) {
+                this.props.handleChangeSlideIndex(this.props.pics.length)
             }
         }
 
@@ -46,7 +46,7 @@ class ItemPhotoSlider extends React.Component {
                         return (
                             <div
                                 key={this.props.pics.indexOf(obj)}
-                                className={this.state.slideIndex === this.props.pics.indexOf(obj) + 1 ? "slide active-anim" : "slide"}
+                                className={this.props.slideIndex === this.props.pics.indexOf(obj) + 1 ? "slide active-anim" : "slide"}
                             >
                                 <img
                                     alt={obj}

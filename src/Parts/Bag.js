@@ -8,10 +8,10 @@ import {CheckOutItem, ViewBagItem} from "./BagParts/Buttons";
 
 class Bag extends React.Component {
 
-    handleWindowChange = (active) => {
-        this.props.handleWindowChange(active)
-        this.props.handleOpenBag(false)
-        setTimeout (() => this.props.pageScrollOn(), 50)
+    async handleWindowChange(active){
+        await this.props.handleWindowChange(active)
+        await this.props.handleOpenBag(false)
+        await this.props.pageScrollOn()
     }
 
     chosenRemoveItemsFunc = (id) => {
@@ -49,7 +49,7 @@ class Bag extends React.Component {
                     />
                     <div className='Bag-button-container'>
                         <ViewBagItem
-                            handleWindowChange={this.handleWindowChange}
+                            handleWindowChange={this.handleWindowChange.bind(this)}
                         />
                         <CheckOutItem/>
                     </div>

@@ -23,17 +23,15 @@ class Actions extends React.Component{
         this.props.appRef.current.classList.remove('Remove-scroll')
     }
 
-    handleOpenBag = (event) => {
-        event.stopPropagation()
-        this.props.handleOpenBag(this.props.myBagActive!==true)
+    async handleOpenBag(event) {
+        await event.stopPropagation()
+        await this.props.handleOpenBag(this.props.myBagActive!==true)
 
-        setTimeout (() => {if (this.props.myBagActive) {
-            return (
-                this.pageScrollOff()
-            )
-        } else {
-            return this.pageScrollOn()
-        }},50)
+       if (this.props.myBagActive) {
+           await this.pageScrollOff()
+       } else {
+           await this.pageScrollOn()
+       }
 
     }
 

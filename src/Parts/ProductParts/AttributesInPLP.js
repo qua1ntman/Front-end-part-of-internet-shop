@@ -11,12 +11,10 @@ class AttributesInPLP extends React.Component {
         if (!this.props.choseAttributes) {
             this.props.SelectAttribute(this.props.displayValue)
             this.props.SelectAttributeInBag(this.props.name, this.props.displayValue)
-            setTimeout(() => console.log(`${this.props.choseAttributes}`), 200)
 
         } else if (this.props.choseAttributes) {
             this.props.SelectAttribute(this.props.displayValue)
             this.props.SelectAttributeInBag(this.props.name, this.props.displayValue)
-            setTimeout(() => console.log(`${this.props.choseAttributes}`), 200)
         }
     };
 
